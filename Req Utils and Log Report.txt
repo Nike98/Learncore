@@ -1,0 +1,38 @@
+
+####  << Required Utils and any Imp Log report File >>  ####
+
+===================================================================================================
+ ##>> Required Utils:
+
+ X- npm install font-awesome
+ X- import the font-awesome in the app.scss
+    Comment up the existing font import
+    @import "node-modules/font-awesome/scss/font-awesome";
+X- Change the App name in the .env file and the app.php file
+X- In app.php file change the timezone
+    take the timezone from the php site
+
+** Major:
+- EXAMPLE site https://laravel.io/
+
+- Need a "Markdown/Pagedown/HTML Editor" like the one in Stackoverflow. This editor
+    is required to be(not necessary but better if it is) Laravel specific or
+    made for Laravel.
+    *- Findings:
+        -> https://pandao.github.io/editor.md/
+            https://github.com/XetaIO/Xetaravel-Editor-md
+
+        ->** Majorly compatible with Laravel and has Tutorials - Will be used for admin article writing
+            https://www.youtube.com/watch?v=a7TAOzWQKEM
+            https://ckeditor.com/docs/ckeditor4/latest/guide/dev_package_managers.html (Needs to be installed with npm)
+            https://artisansweb.net/install-use-ckeditor-laravel/
+            https://stackoverflow.com/questions/30467275/implementing-ckeditor-in-laravel-5
+
+- Found a DataTable extension for Laravel which will help in the Admin module to show the Users
+    *- Findings:
+        -> https://github.com/yajra/laravel-datatables
+            This link includes links to the install tutorials and usage tutorials
+
+
+===================================================================================================
+##>> Important Log Report:

@@ -25,7 +25,7 @@ class ThreadController extends Controller
      */
     public function create()
     {
-        //
+        return view('thread.create');
     }
 
     /**
@@ -36,7 +36,18 @@ class ThreadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate
+        $this->validate($request, [
+            'subject' => 'required|min:10',
+            'type' => 'required',
+            'thread' => 'required|min20'
+        ]);
+
+        // store
+        Thread::create($request->all());
+
+        // redirect
+        return back()->withMessage('Thread Created!');
     }
 
     /**
@@ -47,7 +58,7 @@ class ThreadController extends Controller
      */
     public function show(Thread $thread)
     {
-        //
+        return view('thread.single', compact('thread'));
     }
 
     /**
@@ -58,7 +69,7 @@ class ThreadController extends Controller
      */
     public function edit(Thread $thread)
     {
-        //
+        return view('thread.edit', compact('thread'));
     }
 
     /**
@@ -70,7 +81,18 @@ class ThreadController extends Controller
      */
     public function update(Request $request, Thread $thread)
     {
-        //
+        // validate
+        $this->validate($request, [
+            'subject' => 'required|min:10',
+            'type' => 'required',
+            'thread' => 'required|min20'
+        ]);
+
+        // update
+        Thread::create($request->all());
+
+        // redirect
+        return redirect()->route('thread.show', $thread->id)->withMessage('Thread Updated!');
     }
 
     /**
@@ -81,6 +103,8 @@ class ThreadController extends Controller
      */
     public function destroy(Thread $thread)
     {
-        //
+        $thread->delete();
+
+        return redirect()->route('thread.index')->withMessage('Thread Deleted!');
     }
 }
